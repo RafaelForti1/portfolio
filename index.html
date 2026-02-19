@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafael Forti — Portfolio</title>
+  <meta name="description" content="Portfolio de Rafael Forti — Desenvolvedor Full-Stack com experiência em Next.js, Node.js, PHP e automações de processos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dot Grid Background Pattern -->
+  <div class="dot-grid" aria-hidden="true"></div>
+
+  <!-- Doodle Decorations (SVG) -->
+  <svg class="doodle-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="sketchy">
+        <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" result="noise" seed="2"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">
+      <span class="logo-bracket">{</span> RF <span class="logo-bracket">}</span>
+    </a>
+    <div class="nav-links">
+      <a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
+      <a href="#habilidades" class="nav-link" data-i18n="nav.skills">Habilidades</a>
+      <a href="#projetos" class="nav-link" data-i18n="nav.projects">Projetos</a>
+      <a href="#servicos" class="nav-link" data-i18n="nav.services">Serviços</a>
+      <a href="#experiencia" class="nav-link" data-i18n="nav.experience">Experiência</a>
+      <a href="#contato" class="nav-link" data-i18n="nav.contact">Contato</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre" class="mobile-link" data-i18n="nav.about">Sobre</a>
+    <a href="#habilidades" class="mobile-link" data-i18n="nav.skills">Habilidades</a>
+    <a href="#projetos" class="mobile-link" data-i18n="nav.projects">Projetos</a>
+    <a href="#servicos" class="mobile-link" data-i18n="nav.services">Serviços</a>
+    <a href="#experiencia" class="mobile-link" data-i18n="nav.experience">Experiência</a>
+    <a href="#contato" class="mobile-link" data-i18n="nav.contact">Contato</a>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+
+        <!-- Doodle Stars -->
+        <svg class="doodle star-1" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <path d="M20 2 L24 15 L38 15 L27 23 L31 37 L20 28 L9 37 L13 23 L2 15 L16 15 Z" fill="var(--accent-yellow)" stroke="var(--border)" stroke-width="1.5"/>
+        </svg>
+        <svg class="doodle star-2" viewBox="0 0 30 30" width="30" height="30" aria-hidden="true">
+          <path d="M15 1 L18 11 L29 11 L20 17 L23 28 L15 21 L7 28 L10 17 L1 11 L12 11 Z" fill="var(--accent-teal)" stroke="var(--border)" stroke-width="1.5"/>
+        </svg>
+        <svg class="doodle star-3" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M12 1 L14 9 L22 9 L16 13 L18 22 L12 17 L6 22 L8 13 L2 9 L10 9 Z" fill="var(--accent-coral)" stroke="var(--border)" stroke-width="1.5"/>
+        </svg>
+        <svg class="doodle squiggle-1" viewBox="0 0 120 20" width="120" height="20" aria-hidden="true">
+          <path d="M2 10 Q15 2 30 10 Q45 18 60 10 Q75 2 90 10 Q105 18 118 10" fill="none" stroke="var(--accent-teal)" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="doodle arrow-1" viewBox="0 0 60 60" width="50" height="50" aria-hidden="true">
+          <path d="M10 50 Q30 10 50 15" fill="none" stroke="var(--accent-coral)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M42 8 L50 15 L40 20" fill="none" stroke="var(--accent-coral)" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+
+        <div class="hero-content" data-scroll="fade">
+          <!-- Speech Bubble -->
+          <div class="speech-bubble">
+            <span data-i18n="hero.greeting">Olá! Eu sou o</span>
+            <div class="speech-tail"></div>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-name">Rafael Forti</span>
+            <svg class="hand-underline" viewBox="0 0 320 16" preserveAspectRatio="none">
+              <path d="M2 8 Q40 2 80 10 Q120 16 160 8 Q200 2 240 10 Q280 16 318 8" fill="none" stroke="var(--accent-coral)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </h1>
+
+          <div class="role-sticker">
+            <span class="sticker-tape"></span>
+            <p data-i18n="hero.role">Desenvolvedor Full Stack</p>
+          </div>
+
+          <p class="hero-desc" data-i18n="hero.desc">
+            Desenvolvedor Full-Stack criando soluções performáticas, seguras e escaláveis.
+            Experiência em Next.js, Node.js, PHP e automações inteligentes.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projetos" class="btn btn-primary" data-i18n="hero.cta.projects">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Ver Projetos
+            </a>
+            <a href="#contato" class="btn btn-secondary" data-i18n="hero.cta.contact">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Falar Comigo
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-avatar-area" data-scroll="scale-in">
+          <div class="avatar-frame">
+            <div class="avatar-status-dot"></div>
+            <div class="avatar-image">
+              <img src="avatar-cartoon.png" alt="Ilustração de Rafael Forti com fones de ouvido" loading="lazy">
+            </div>
+          </div>
+          <!-- Doodle Circle Around Avatar -->
+          <svg class="doodle-circle" viewBox="0 0 260 260" width="260" height="260" aria-hidden="true">
+            <circle cx="130" cy="130" r="120" fill="none" stroke="var(--accent-yellow)" stroke-width="3" stroke-dasharray="12 8" opacity="0.5"/>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-header" data-scroll="slide-up">
+          <span class="section-badge" data-i18n="about.badge">Quem sou eu</span>
+          <h2 class="section-title" data-i18n="about.title">Sobre Mim</h2>
+          <svg class="title-underline" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M2 5 Q50 0 100 5 Q150 10 198 5" fill="none" stroke="var(--accent-teal)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text" data-scroll="slide-right">
+            <div class="notebook-card">
+              <div class="notebook-line"></div>
+              <div class="notebook-line"></div>
+              <div class="notebook-line"></div>
+              <div class="notebook-holes">
+                <span></span><span></span><span></span>
+              </div>
+              <p data-i18n="about.p1">
+                Sou desenvolvedor Full-Stack com experiência em Next.js, Node.js, PHP (Laravel e WordPress)
+                e integrações de APIs. Tenho atuado também em automações de processos com ferramentas
+                como n8n, Postman e Microsoft Power Platform, sempre buscando criar soluções
+                performáticas, seguras e escaláveis.
+              </p>
+              <p data-i18n="about.p2">
+                Sou apaixonado por tecnologia e colaboração em equipe, aplicando metodologias
+                ágeis e boas práticas de desenvolvimento para entregar soluções que realmente
+                fazem a diferença. Experiência com sistemas legados, dashboards interativos
+                e automações inteligentes.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-stats" data-scroll="slide-left">
+            <div class="stat-sticky" style="--rotation: -2deg; --bg: var(--sticky-yellow)">
+              <span class="stat-number">20+</span>
+              <span class="stat-label" data-i18n="about.stat1">Projetos Entregues</span>
+              <div class="sticky-fold"></div>
+            </div>
+            <div class="stat-sticky" style="--rotation: 1.5deg; --bg: var(--sticky-coral)">
+              <span class="stat-number">4+</span>
+              <span class="stat-label" data-i18n="about.stat2">Anos de Experiência</span>
+              <div class="sticky-fold"></div>
+            </div>
+            <div class="stat-sticky" style="--rotation: -1deg; --bg: var(--sticky-teal)">
+              <span class="stat-number">25%</span>
+              <span class="stat-label" data-i18n="about.stat3">Redução em Fluxos</span>
+              <div class="sticky-fold"></div>
+            </div>
+            <div class="stat-sticky" style="--rotation: 2.5deg; --bg: var(--sticky-lavender)">
+              <span class="stat-number">∞</span>
+              <span class="stat-label" data-i18n="about.stat4">Cafés Tomados</span>
+              <div class="sticky-fold"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section-alt" id="habilidades">
+      <div class="container">
+        <div class="section-header" data-scroll="slide-up">
+          <span class="section-badge" data-i18n="skills.badge">Toolkit</span>
+          <h2 class="section-title" data-i18n="skills.title">Habilidades</h2>
+          <svg class="title-underline" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M2 5 Q50 0 100 5 Q150 10 198 5" fill="none" stroke="var(--accent-coral)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category" data-scroll="stagger" data-delay="0">
+            <h3 class="category-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-coral)" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span data-i18n="skills.frontend">Frontend</span>
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag" style="--r: -1deg">HTML5</span>
+              <span class="skill-tag" style="--r: 1.5deg">CSS3</span>
+              <span class="skill-tag" style="--r: -0.5deg">JavaScript</span>
+              <span class="skill-tag" style="--r: 2deg">TypeScript</span>
+              <span class="skill-tag" style="--r: -1.5deg">React.js</span>
+              <span class="skill-tag" style="--r: 0.5deg">Next.js</span>
+              <span class="skill-tag" style="--r: -2deg">Flutter</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-scroll="stagger" data-delay="100">
+            <h3 class="category-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <span data-i18n="skills.backend">Backend</span>
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag" style="--r: 1deg">Node.js</span>
+              <span class="skill-tag" style="--r: -1.5deg">Java</span>
+              <span class="skill-tag" style="--r: 0.5deg">PHP / Laravel</span>
+              <span class="skill-tag" style="--r: -2deg">SQL</span>
+              <span class="skill-tag" style="--r: 1.5deg">REST APIs</span>
+              <span class="skill-tag" style="--r: -0.5deg">WordPress</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-scroll="stagger" data-delay="200">
+            <h3 class="category-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-yellow)" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <span data-i18n="skills.tools">Ferramentas</span>
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag" style="--r: -1deg">Git / GitHub</span>
+              <span class="skill-tag" style="--r: 2deg">n8n</span>
+              <span class="skill-tag" style="--r: -0.5deg">Postman</span>
+              <span class="skill-tag" style="--r: 1deg">Power Platform</span>
+              <span class="skill-tag" style="--r: -1.5deg">Jira</span>
+              <span class="skill-tag" style="--r: 0.5deg">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-header" data-scroll="slide-up">
+          <span class="section-badge" data-i18n="projects.badge">Trabalhos</span>
+          <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
+          <svg class="title-underline" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M2 5 Q50 0 100 5 Q150 10 198 5" fill="none" stroke="var(--accent-yellow)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 - CondoAI -->
+          <article class="project-card" data-scroll="stagger" data-delay="0" style="--tilt: -1.2deg">
+            <div class="card-pin"></div>
+            <div class="project-preview-area">
+              <div class="browser-mock">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-content">
+                  <div class="mock-placeholder" style="--c1: var(--accent-coral); --c2: var(--accent-yellow)">
+                    <span>CondoAI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">CondoAI</h3>
+              <p class="project-desc" data-i18n="projects.1.desc">Plataforma SaaS para gestão de encomendas em condomínios com Smart Pickup, dashboard analítico para síndicos e notificações inteligentes via Edge Functions.</p>
+              <div class="project-tags">
+                <span>React.js</span><span>TypeScript</span><span>Supabase</span>
+              </div>
+              <div class="project-status">Projeto privado</div>
+            </div>
+          </article>
+
+          <!-- Project 2 - SEOBoost AI -->
+          <article class="project-card" data-scroll="stagger" data-delay="100" style="--tilt: 0.8deg">
+            <div class="card-pin"></div>
+            <div class="project-preview-area">
+              <div class="browser-mock">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-content">
+                  <div class="mock-placeholder" style="--c1: var(--accent-teal); --c2: var(--accent-lavender)">
+                    <span>SEOBoost AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">SEOBoost AI</h3>
+              <p class="project-desc" data-i18n="projects.2.desc">SaaS de SEO com IA que gera auditorias inteligentes, páginas HTML otimizadas, Schema.org automático e monitor de rankings em tempo real.</p>
+              <div class="project-tags">
+                <span>React.js</span><span>TypeScript</span><span>IA</span>
+              </div>
+              <div class="project-status">Projeto privado</div>
+            </div>
+          </article>
+
+          <!-- Project 3 - FitGestãoPro CRM -->
+          <article class="project-card" data-scroll="stagger" data-delay="200" style="--tilt: -0.6deg">
+            <div class="card-pin"></div>
+            <div class="project-preview-area">
+              <div class="browser-mock">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-content">
+                  <div class="mock-placeholder" style="--c1: var(--accent-yellow); --c2: var(--accent-coral)">
+                    <span>FitGestãoPro</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">FitGestãoPro CRM</h3>
+              <p class="project-desc" data-i18n="projects.3.desc">Plataforma SaaS de gestão para academias com IA e visão computacional, análise de dados em tempo real e auxílio técnico assistido por inteligência artificial.</p>
+              <div class="project-tags">
+                <span>React.js</span><span>TypeScript</span><span>IA</span>
+              </div>
+              <div class="project-status">Projeto privado</div>
+            </div>
+          </article>
+
+          <!-- Project 4 - MABE -->
+          <article class="project-card" data-scroll="stagger" data-delay="300" style="--tilt: 1.5deg">
+            <div class="card-pin"></div>
+            <div class="project-preview-area">
+              <div class="browser-mock">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-content">
+                  <div class="mock-placeholder" style="--c1: var(--accent-lavender); --c2: var(--accent-teal)">
+                    <span>MABE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">MABE - Assistente IA de Voz</h3>
+              <p class="project-desc" data-i18n="projects.4.desc">Sistema de gestão fitness com assistente virtual por voz em tempo real, interface conversacional, suporte técnico dinâmico e dashboard inteligente.</p>
+              <div class="project-tags">
+                <span>Next.js</span><span>IA Generativa</span><span>TTS/STT</span>
+              </div>
+              <div class="project-status">Projeto privado</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section-alt" id="servicos">
+      <div class="container">
+        <div class="section-header" data-scroll="slide-up">
+          <span class="section-badge" data-i18n="services.badge">Serviços</span>
+          <h2 class="section-title" data-i18n="services.title">Contrate seus projetos digitais</h2>
+          <svg class="title-underline" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M2 5 Q50 0 100 5 Q150 10 198 5" fill="none" stroke="var(--accent-teal)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card" data-scroll="stagger" data-delay="0" style="--tilt: -1.2deg">
+            <div class="service-pin"></div>
+            <h3 class="service-name">Sites Institucionais</h3>
+            <p class="service-desc">
+              Página profissional e responsiva para empresas, portfólios e negócios locais.
+            </p>
+            <p class="service-price">a partir de R$ 1.500</p>
+            <ul class="service-list">
+              <li>Desenvolvido com foco em performance e SEO</li>
+              <li>Páginas otimizadas para mobile</li>
+              <li>Integração com formulários e WhatsApp</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-scroll="stagger" data-delay="100" style="--tilt: 0.8deg">
+            <div class="service-pin"></div>
+            <h3 class="service-name">Lojas Virtuais</h3>
+            <p class="service-desc">
+              Estrutura completa para vender online com segurança e escalabilidade.
+            </p>
+            <p class="service-price">a partir de R$ 2.500</p>
+            <ul class="service-list">
+              <li>Integração com meios de pagamento</li>
+              <li>Painel para gestão de produtos e pedidos</li>
+              <li>Layout pensado para conversão</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-scroll="stagger" data-delay="200" style="--tilt: -0.6deg">
+            <div class="service-pin"></div>
+            <h3 class="service-name">Automações & Integrações</h3>
+            <p class="service-desc">
+              Conecte sistemas e elimine tarefas manuais com fluxos inteligentes.
+            </p>
+            <p class="service-price">a partir de R$ 600</p>
+            <ul class="service-list">
+              <li>n8n, Power Platform e APIs REST</li>
+              <li>Disparo automático de notificações e relatórios</li>
+              <li>Integração com sistemas legados</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-scroll="stagger" data-delay="300" style="--tilt: 1.4deg">
+            <div class="service-pin"></div>
+            <h3 class="service-name">Aplicações Personalizadas</h3>
+            <p class="service-desc">
+              Sistemas sob medida para o seu negócio, web ou mobile.
+            </p>
+            <p class="service-price">a partir de R$ 4.000</p>
+            <ul class="service-list">
+              <li>Arquitetura escalável e segura</li>
+              <li>Dashboards e painéis administrativos</li>
+              <li>Suporte a integrações futuras</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="services-promo" data-scroll="slide-up">
+          <span class="promo-label">Promoção</span>
+          <p class="promo-text">
+            Lojas de porte pequeno têm um valor especial para a primeira loja virtual
+            ou site expositor. Me chama no WhatsApp e vamos montar algo sob medida.
+          </p>
+        </div>
+
+        <div class="services-cta">
+          <a
+            href="https://wa.me/5511978452482?text=Ol%C3%A1%20Rafael,%20vi%20seu%20portf%C3%B3lio%20e%20quero%20falar%20sobre%20um%20projeto."
+            target="_blank"
+            class="btn btn-primary whatsapp-btn"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5A8.5 8.5 0 0 1 12.3 20l-1.8.6-3.2 1.1.7-3.3.3-1.6A8.5 8.5 0 1 1 21 11.5z"/>
+              <path d="M16 13.5c-.2-.1-1.2-.6-1.3-.6s-.3-.1-.5.1-.6.6-.7.7-.3.1-.5 0a6.9 6.9 0 0 1-2-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.3c.1-.1 0-.3 0-.4s-.5-1.3-.7-1.7-.3-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.8 4.3 4.3 0 0 0 .9 2.2 9.7 9.7 0 0 0 3.8 3.4 8.9 8.9 0 0 0 1.9.7 2.6 2.6 0 0 0 1.7-.1 2.1 2.1 0 0 0 1-1.5c.1-.7.1-.8 0-.9s-.1-.1-.3-.2z"/>
+            </svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section-alt" id="experiencia">
+      <div class="container">
+        <div class="section-header" data-scroll="slide-up">
+          <span class="section-badge" data-i18n="exp.badge">Trajetória</span>
+          <h2 class="section-title" data-i18n="exp.title">Experiência</h2>
+          <svg class="title-underline" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M2 5 Q50 0 100 5 Q150 10 198 5" fill="none" stroke="var(--accent-lavender)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item" data-scroll="stagger" data-delay="0">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card" style="--tilt: -1deg">
+              <div class="timeline-tape"></div>
+              <span class="timeline-date">2025 — 2026</span>
+              <h3 data-i18n="exp.1.title">Desenvolvedor Full-Stack</h3>
+              <p class="timeline-company" data-i18n="exp.1.company">Aser Security</p>
+              <p class="timeline-desc" data-i18n="exp.1.desc">Desenvolvimento de plataforma SaaS de Segurança da Informação com Node.js (back-end) e ExtJS (front-end), implementando funcionalidades e módulos escaláveis.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-scroll="stagger" data-delay="100">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card" style="--tilt: 0.8deg">
+              <div class="timeline-tape"></div>
+              <span class="timeline-date">2023 — 2025</span>
+              <h3 data-i18n="exp.2.title">Desenvolvedor Full Stack</h3>
+              <p class="timeline-company" data-i18n="exp.2.company">Tokio Marine Seguradora</p>
+              <p class="timeline-desc" data-i18n="exp.2.desc">Desenvolvimento backend com PHP (Laravel), Java e JavaScript. Interfaces responsivas com Next.js e Flutter. Integração de sistemas legados via APIs corporativas.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-scroll="stagger" data-delay="200">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card" style="--tilt: -0.5deg">
+              <div class="timeline-tape"></div>
+              <span class="timeline-date">2021 — 2024</span>
+              <h3 data-i18n="exp.3.title">Desenvolvedor Full-Stack</h3>
+              <p class="timeline-company" data-i18n="exp.3.company">GA Web Solutions</p>
+              <p class="timeline-desc" data-i18n="exp.3.desc">Desenvolvimento com TypeScript, Node.js e Next.js. Integração de APIs RESTful, automação de fluxos com n8n e projetos focados em desempenho e escalabilidade.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-scroll="stagger" data-delay="300">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card" style="--tilt: 1deg">
+              <div class="timeline-tape"></div>
+              <span class="timeline-date">2022</span>
+              <h3 data-i18n="exp.4.title">Desenvolvedor Full-Stack</h3>
+              <p class="timeline-company" data-i18n="exp.4.company">AutoFlow Hub</p>
+              <p class="timeline-desc" data-i18n="exp.4.desc">Interfaces em Next.js com integração a APIs do n8n. Dashboards interativos e automações inteligentes que reduziram em 25% o tempo de execução de fluxos.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="educacao">
+      <div class="container">
+        <div class="section-header" data-scroll="slide-up">
+          <span class="section-badge" data-i18n="edu.badge">Aprendizado</span>
+          <h2 class="section-title" data-i18n="edu.title">Formação</h2>
+          <svg class="title-underline" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M2 5 Q50 0 100 5 Q150 10 198 5" fill="none" stroke="var(--accent-teal)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card" data-scroll="stagger" data-delay="0" style="--tilt: -1.5deg">
+            <div class="edu-pin"></div>
+            <div class="edu-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-coral)" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 data-i18n="edu.1.title">Sistemas de Informação</h3>
+            <p class="edu-institution" data-i18n="edu.1.institution">Impacta Tecnologia</p>
+            <span class="edu-year">2024 — 2029</span>
+          </div>
+
+          <div class="edu-card" data-scroll="stagger" data-delay="100" style="--tilt: 1deg">
+            <div class="edu-pin"></div>
+            <div class="edu-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+            </div>
+            <h3 data-i18n="edu.2.title">Sementes do Brasil Tech</h3>
+            <p class="edu-institution" data-i18n="edu.2.institution">FIAP</p>
+            <span class="edu-year">2023</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-alt" id="contato">
+      <div class="container">
+        <div class="contact-wrapper" data-scroll="scale-in">
+          <!-- Doodle decorations -->
+          <svg class="contact-doodle d1" viewBox="0 0 30 30" width="30" height="30" aria-hidden="true">
+            <path d="M15 1 L18 11 L29 11 L20 17 L23 28 L15 21 L7 28 L10 17 L1 11 L12 11 Z" fill="var(--accent-yellow)" opacity="0.6"/>
+          </svg>
+          <svg class="contact-doodle d2" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="var(--accent-coral)" stroke-width="2" stroke-dasharray="6 4"/>
+          </svg>
+          <svg class="contact-doodle d3" viewBox="0 0 40 20" width="40" height="20" aria-hidden="true">
+            <path d="M2 10 Q10 2 20 10 Q30 18 38 10" fill="none" stroke="var(--accent-teal)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="contact-title" data-i18n="contact.title">Vamos Conversar?</h2>
+          <p class="contact-desc" data-i18n="contact.desc">
+            Tem um projeto em mente ou quer trocar uma ideia? Adoraria ouvir de você!
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:yngrafadev@gmail.com" class="contact-btn email-btn" data-i18n="contact.email">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              E-mail
+            </a>
+            <a href="https://github.com/RafaelForti1" target="_blank" class="contact-btn github-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/rafaelforti1/" target="_blank" class="contact-btn linkedin-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        <span data-i18n="footer.made">Feito com</span>
+        <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-coral)" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span data-i18n="footer.by">por Rafael Forti</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ===== THEME TOGGLE =====
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function setTheme(dark) {
+      html.classList.toggle('dark', dark);
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme === 'dark');
+    } else {
+      setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      setTheme(!html.classList.contains('dark'));
+    });
+
+    // ===== MOBILE MENU =====
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // ===== NAVBAR SCROLL EFFECT =====
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      navbar.classList.toggle('scrolled', scroll > 50);
+      lastScroll = scroll;
+    });
+
+    // ===== SCROLL PROGRESS BAR =====
+    const scrollProgress = document.getElementById('scrollProgress');
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      scrollProgress.style.width = scrolled + '%';
+    });
+
+    // ===== SCROLL ANIMATIONS =====
+    const scrollElements = document.querySelectorAll('[data-scroll]');
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('scroll-visible');
+          }, parseInt(delay));
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    scrollElements.forEach(el => scrollObserver.observe(el));
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // ===== CARD HOVER WOBBLE =====
+    document.querySelectorAll('.project-card, .timeline-card, .edu-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.setProperty('--tilt', '0deg');
+      });
+      card.addEventListener('mouseleave', function() {
+        // Restore original tilt
+        const originalTilt = this.getAttribute('style')?.match(/--tilt:\s*([^;]+)/)?.[1] || '0deg';
+      });
+    });
+
+    // ===== TOAST =====
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ===== ACTIVE NAV LINK =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
